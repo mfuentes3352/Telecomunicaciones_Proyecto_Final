@@ -6,7 +6,7 @@ Created on Sat Aug  2 01:18:22 2025
 
 # ModbusTCP_Client.py
 
-Cliente Modbus TCP que se conecta al servidor en 192.168.0.77:1502.
+Inicializa un Cliente Modbus TCP que se conecta al servidor en 192.168.0.77:1502.
 Simula un proceso industrial generando cinco variables (temperatura, presión, velocidad angular, frecuencia y potencia),
 las escribe en registros de retención y luego las lee para verificar la comunicación.
 Los valores se actualizan y muestran continuamente por consola.
