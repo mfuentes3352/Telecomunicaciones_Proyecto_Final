@@ -6,7 +6,7 @@ Created on Sat Aug  2 01:18:22 2025
 
 # ModbusTCP_server_v2.py
 
-Inicializa un servidor Modbus TCP en el host local (IP 192.168.0.82/24) que escucha en el puerto 1502.
+Inicializa un servidor Modbus TCP en el host local (IP 192.168.0.77/24) que escucha en el puerto 1502.
 Define la memoria de aplicación del dispositivo con cuatro bloques consecutivos de 9999 registros cada uno,
 asignados respectivamente a entradas discretas, bobinas, registros de entrada y registros de retención.
 
