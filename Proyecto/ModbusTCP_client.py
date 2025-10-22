@@ -10,9 +10,7 @@ Inicializa un Cliente Modbus TCP que se conecta al servidor en 192.168.0.77:1502
 Simula un proceso industrial generando cinco variables (temperatura, presión, velocidad angular, frecuencia y potencia),
 las escribe en registros de retención y luego las lee para verificar la comunicación.
 Los valores se actualizan y muestran continuamente por consola.
-
 """
-
 
 #!pip install pymodbus==3.0.2
 import time, random
