@@ -68,10 +68,7 @@ La interfaz está organizada en cinco pestañas principales, cada una asociada a
 
 #### 1. Captura Modbus TCP
 
-Permite capturar paquetes de red en tiempo real utilizando la función:
-
-```python
-sniff()  # de la librería Scapy
+Permite capturar paquetes de red en tiempo real utilizando la función `sniff()` de la librería Scapy.
 
 **Elementos de la pestaña:**
 - **Panel superior:** muestra la lista de paquetes capturados.  
