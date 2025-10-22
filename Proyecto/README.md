@@ -29,7 +29,7 @@ En cada ciclo:
 
 ## ModbusTCP_Server_v2.py
 
-Este script inicializa un **servidor Modbus TCP** en el host local (`192.168.0.82/24`), escuchando en el **puerto 1502**.  
+Este script inicializa un **servidor Modbus TCP** en el host local (`192.168.0.77/24`), escuchando en el **puerto 1502**.  
 Define la **memoria de aplicación** del dispositivo como cuatro bloques consecutivos de **9999 registros** cada uno, correspondientes a:
 
 - Entradas discretas (*Discrete Inputs*)
