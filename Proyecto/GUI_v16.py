@@ -1,3 +1,21 @@
+"""
+Created on Tue Oct  21 01:18:22 2025
+
+@author: Martin
+
+# GUI_v16.py
+
+Interfaz gráfica de la herramienta de monitoreo Modbus TCP. 
+Organiza la interacción del usuario en pestañas que permiten capturar y analizar paquetes,
+realizar descubrimiento de red, visualizar métricas de desempeño en tiempo real, registrar datos
+históricos y gestionar alarmas.
+
+Implementa la decodificación de tramas Modbus TCP mediante la estructura ADU (MBAP + PDU), 
+mostrando los campos relevantes del protocolo y mensajes descriptivos de las operaciones.
+
+Incluye funciones de exportación de datos en formato .pcap y .csv para análisis externo o tratamiento estadístico.
+"""
+
 import sys
 import time
 import threading
