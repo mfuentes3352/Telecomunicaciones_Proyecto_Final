@@ -1,4 +1,15 @@
-# ModbusTCP_Client.py
+"""
+Created on Sat Aug  2 01:18:22 2025
+
+@author: Martin
+
+# ModbusTCP_client_v2.py
+
+Inicializa un Cliente Modbus TCP que se conecta al servidor en 192.168.0.77:1502.
+Envía solicitudes de escritura y lectura de múltiples bobinas de manera continua,
+simulando un proceso industrial con cinco variables binarias generadas aleatoriamente.
+En cada ciclo escribe las bobinas, solicita su lectura y muestra por consola los valores escritos y leídos.
+"""
 
 #!pip install pymodbus==3.0.2
 import time, random

@@ -152,6 +152,18 @@ Estas exportaciones pueden realizarse tanto para los **paquetes capturados** com
 📄 **Archivo:** [GUI_v16.py](./GUI_v16.py)
 
 
+## ModbusTCP_client_v2
+
+Este script inicializa un **cliente Modbus TCP** en el *host local*, estableciendo conexión con el **servidor Modbus TCP** (`192.168.0.77:1502`).  
+Envía solicitudes de **escritura y lectura de múltiples bobinas** de forma continua, simulando un proceso industrial con cinco variables binarias.
+
+En cada iteración:
+1. Genera valores aleatorios binarios mediante la función `generate_random_values()`.  
+2. Escribe esos valores en las bobinas del servidor.  
+3. Solicita su lectura inmediatamente después.  
+4. Muestra por consola los valores escritos y leídos.
+
+📄 **Archivo:** [ModbusTCP_client_v2.py](./ModbusTCP_client_v2.py)
 
 
 
