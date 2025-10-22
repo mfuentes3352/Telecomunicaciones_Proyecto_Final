@@ -175,7 +175,7 @@ Inicializa un **cliente Modbus TCP** en el *host local*, estableciendo conexión
 La particularidad de este cliente es que, en cada iteración, la dirección de inicio cambia de forma aleatoria dentro del rango válido `(0–9999)`, pero existe un **20% de probabilidad** de que se seleccione una **dirección fuera del rango**, generando así una **trama errónea a propósito**.  
 El servidor, al detectar este error, responde con una **respuesta de excepción** según el código de función correspondiente.
 
-**En cada iteración:**
+En cada iteración:
 1. Genera valores binarios aleatorios mediante `generate_random_values()`.  
 2. Crea una dirección de inicio aleatoria, que puede ser válida o inválida con una probabilidad de error del 20%.  
 3. Escribe esos valores en las bobinas del servidor.  
