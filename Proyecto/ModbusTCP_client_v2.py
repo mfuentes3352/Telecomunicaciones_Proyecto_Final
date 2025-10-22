@@ -1,4 +1,4 @@
-# ModbusTCP_Client_v2.py
+# ModbusTCP_Client.py
 
 #!pip install pymodbus==3.0.2
 import time, random
@@ -15,7 +15,7 @@ def generate_random_values():
 
 try:
     print('Start Modbus TCP Client', end = '\n\n')
-    client = ModbusClient(host='192.168.0.84', port=1502)
+    client = ModbusClient(host='192.168.0.77', port=1502)
     
 
     if not client.connect():

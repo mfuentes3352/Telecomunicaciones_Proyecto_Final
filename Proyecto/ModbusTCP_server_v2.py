@@ -40,8 +40,8 @@ def run_async_server():
     identity.MajorMinorRevision = '3.0.2'
 
     StartTcpServer(context=context, host='0.0.0.0',
-                   identity=identity, address=("192.168.0.84", 1502))
+                   identity=identity, address=("192.168.0.77", 1502))
 
 if __name__ == "__main__":
-    print('Modbus server started on 192.168.0.84 port 1502')
+    print('Modbus server started on 192.168.0.77 port 1502')
     run_async_server()

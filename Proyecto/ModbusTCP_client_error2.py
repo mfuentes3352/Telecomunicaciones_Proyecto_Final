@@ -21,18 +21,18 @@ from pymodbus.exceptions import ModbusIOException
 def generate_random_values():
     return [random.randint(0, 1) for _ in range(5)]
 
-# Decide la dirección de inicio (válida o inválida con 20% de probabilidad)
+# Decide la dirección de inicio (válida o inválida con 20% de probabilidad) 0.95 en la prueba de errores
 def generate_random_address():
-    if random.random() < 0.2:
+    if random.random() < 0.95:
         # Dirección fuera de rango
-        return random.choice([-5, -1, 10000, 12000, 65535])
+        return random.choice([10000, 12000, 20000, 24000, 65535])
     else:
         # Dirección válida: 0 a 9994 (para 5 bobinas)
         return random.randint(0, 9994)
 
 try:
     print('Start Modbus TCP Client\n')
-    client = ModbusClient(host='192.168.0.84', port=1502)
+    client = ModbusClient(host='192.168.0.77', port=1502) #192.168.0.84
 
     if not client.connect():
         print("Connection failed!")

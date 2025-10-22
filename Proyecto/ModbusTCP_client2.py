@@ -1,18 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Aug  2 01:18:22 2025
-
-@author: Martin
-
 # ModbusTCP_Client.py
-
-Cliente Modbus TCP que se conecta al servidor en 192.168.0.77:1502.
-Simula un proceso industrial generando cinco variables (temperatura, presión, velocidad angular, frecuencia y potencia),
-las escribe en registros de retención y luego las lee para verificar la comunicación.
-Los valores se actualizan y muestran continuamente por consola.
-
-"""
-
 
 #!pip install pymodbus==3.0.2
 import time, random
@@ -40,7 +26,8 @@ def generate_random_values():
 
 try:
     print('Start Modbus TCP Client', end = '\n\n')
-    client = ModbusClient(host='192.168.0.77', port=1502)
+    client = ModbusClient(host='192.168.0.76', port=1502)
+    #client = ModbusClient(host='192.168.0.84', port=1502)
 
     if not client.connect():
         print("Connection failed!")
