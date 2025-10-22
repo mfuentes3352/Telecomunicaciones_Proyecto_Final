@@ -2,7 +2,7 @@
 
 En este directorio se encuentran los códigos desarrollados para el trabajo final de *Telecomunicaciones*, titulado *“Captura y análisis de tráfico en redes Modbus TCP para inspección de estado de red en tiempo real”*, realizado en el marco de la asignatura **Proyecto 2** de la carrera **Ingeniería Electrónica** de la **FCEIA – UNR**.
 
-El repositorio incluye los **scripts de los Clientes y Servidores Modbus TCP**, junto con el **script de la Interfaz Gráfica de Usuario (GUI) del analizador de tráfico**.
+El repositorio incluye los **scripts de los Clientes y Servidores Modbus TCP**, junto con el **script de la Interfaz Gráfica de Usuario (GUI)** del analizador de tráfico.
 
 Todos los scripts pueden ejecutarse en distintas máquinas virtuales conectadas en red. A continuación, se describen sus principales funcionalidades.
 
