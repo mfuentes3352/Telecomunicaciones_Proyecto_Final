@@ -166,4 +166,25 @@ En cada iteración:
 📄 **Archivo:** [ModbusTCP_client_v2.py](./ModbusTCP_client_v2.py)
 
 
+## ModbusTCP_client_error2.py
+
+Este script es una variante de **ModbusTCP_client_v2.py**, utilizada para **generar tramas erróneas deliberadamente** con el fin de evaluar cómo responde el servidor Modbus TCP ante errores de dirección y comprobar su capacidad para construir **respuestas de excepción**.
+
+Inicializa un **cliente Modbus TCP** en el *host local*, estableciendo conexión con el **servidor Modbus TCP** (`192.168.0.77:1502`), y comienza a enviar solicitudes de escritura y lectura de múltiples bobinas.
+
+La particularidad de este cliente es que, en cada iteración, la dirección de inicio cambia de forma aleatoria dentro del rango válido `(0–9999)`, pero existe un **20% de probabilidad** de que se seleccione una **dirección fuera del rango**, generando así una **trama errónea a propósito**.  
+El servidor, al detectar este error, responde con una **respuesta de excepción** según el código de función correspondiente.
+
+**En cada iteración:**
+1. Genera valores binarios aleatorios mediante `generate_random_values()`.  
+2. Crea una dirección de inicio aleatoria, que puede ser válida o inválida con una probabilidad de error del 20%.  
+3. Escribe esos valores en las bobinas del servidor.  
+4. Solicita su lectura inmediatamente después.  
+5. Muestra por consola los valores escritos y leídos.  
+6. Si la trama es errónea, el servidor responde con una **excepción Modbus** indicando el tipo de error.
+
+📄 **Archivo:** [ModbusTCP_client_error2.py](./ModbusTCP_client_error2.py)
+
+
+
 

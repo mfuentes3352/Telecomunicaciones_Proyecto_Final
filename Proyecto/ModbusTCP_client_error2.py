@@ -4,6 +4,15 @@ Created on Tue Jul 29 17:42:22 2025
 
 @author: Martin
 
+# ModbusTCP_client_error2.py
+
+Inicializa un cliente Modbus TCP que genera tramas erróneas deliberadamente 
+(20% de direcciones fuera de rango) con el fin de ver cómo responde el servidor
+a las tramas erróneas, es decir, la idea es poner a prueba su capacidad para
+construir respuestas de excepción. Se conecta al servidor en 192.168.0.77:1502.
+
+Envía solcitudes de escritura y lectura de bobinas, mostrando valores y errores detectados.
+
 Escribe 5 bobinas (FC 0x0F).
 
 En cada iteración, usa una dirección válida o inválida (por ejemplo, -1 o 12000) 
@@ -21,9 +30,9 @@ from pymodbus.exceptions import ModbusIOException
 def generate_random_values():
     return [random.randint(0, 1) for _ in range(5)]
 
-# Decide la dirección de inicio (válida o inválida con 20% de probabilidad) 0.95 en la prueba de errores
-def generate_random_address():
-    if random.random() < 0.95:
+# Decide la dirección de inicio (válida o inválida con 20% de probabilidad) 
+def generate_random_address():               # 0.95 en la prueba de errores
+    if random.random() < 0.2:
         # Dirección fuera de rango
         return random.choice([10000, 12000, 20000, 24000, 65535])
     else:
@@ -74,7 +83,7 @@ try:
         time.sleep(4.0)
 
 except Exception as e:
-    print("💥 Error general:", e)
+    print("Error general:", e)
 
 finally:
     print("Modbus TCP client stopped")
