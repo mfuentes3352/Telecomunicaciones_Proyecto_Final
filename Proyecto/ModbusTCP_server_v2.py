@@ -17,7 +17,6 @@ El servidor monitorea los cambios en los registros de retención (holding regist
 los nuevos valores cuando detecta modificaciones.
 """
 
-
 from pymodbus.server import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
