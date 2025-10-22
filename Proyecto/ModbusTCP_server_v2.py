@@ -3,9 +3,21 @@
 Created on Sat Aug  2 01:18:22 2025
 
 @author: Martin
-"""
 
 # ModbusTCP_server_v2.py
+
+Inicializa un servidor Modbus TCP en el host local (IP 192.168.0.82/24) que escucha en el puerto 1502.
+Define la memoria de aplicación del dispositivo con cuatro bloques consecutivos de 9999 registros cada uno,
+asignados respectivamente a entradas discretas, bobinas, registros de entrada y registros de retención.
+
+Cada solicitud recibida activa una operación local de lectura o escritura en la memoria del servidor,
+y genera una respuesta Modbus (o una excepción, según corresponda) que se envía al cliente.
+
+El servidor monitorea los cambios en los registros de retención (holding registers) e imprime por consola
+los nuevos valores cuando detecta modificaciones.
+"""
+
+
 from pymodbus.server import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
