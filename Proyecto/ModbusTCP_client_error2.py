@@ -8,12 +8,12 @@ Created on Tue Jul 29 17:42:22 2025
 
 Inicializa un cliente Modbus TCP que genera tramas erróneas deliberadamente 
 (20% de direcciones fuera de rango) con el fin de ver cómo responde el servidor
-a las tramas erróneas, es decir, la idea es poner a prueba su capacidad para
-construir respuestas de excepción. Se conecta al servidor en 192.168.0.77:1502.
+ante errores de dirección y comprobar su capacidad para construir respuestas de excepción. 
 
-Envía solcitudes de escritura y lectura de bobinas, mostrando valores y errores detectados.
+Establece conexión con el servidor Modbus TCP en 192.168.0.77:1502.
 
-Escribe 5 bobinas (FC 0x0F).
+Envía solcitudes de escritura y lectura de bobinas, escribiendo 5 bobinas (FC 0x0F),
+mostrando valores y errores detectados.
 
 En cada iteración, usa una dirección válida o inválida (por ejemplo, -1 o 12000) 
 con una probabilidad del 20% de error.
