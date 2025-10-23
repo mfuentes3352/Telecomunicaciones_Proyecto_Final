@@ -113,7 +113,7 @@ last_seq = None   # último número de secuencia asociado a una solicitud
 class SnifferThread(QThread):
     new_packet = pyqtSignal(dict)
     
-    def __init__(self, max_packets=None):    # None = captura infinita
+    def __init__(self, max_packets=None):    
         super().__init__()
         self.max_packets = max_packets
         self.captured = 0
