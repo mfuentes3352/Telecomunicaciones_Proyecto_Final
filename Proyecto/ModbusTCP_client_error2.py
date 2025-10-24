@@ -31,8 +31,8 @@ def generate_random_values():
     return [random.randint(0, 1) for _ in range(5)]
 
 # Decide la dirección de inicio (válida o inválida con 20% de probabilidad) 
-def generate_random_address():               # 0.95 en la prueba de errores
-    if random.random() < 0.2:
+def generate_random_address():               
+    if random.random() < 0.2:                # 0.95 en la prueba de errores
         # Dirección fuera de rango
         return random.choice([10000, 12000, 20000, 24000, 65535])
     else:
