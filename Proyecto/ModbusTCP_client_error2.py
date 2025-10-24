@@ -41,7 +41,7 @@ def generate_random_address():
 
 try:
     print('Start Modbus TCP Client\n')
-    client = ModbusClient(host='192.168.0.77', port=1502) #192.168.0.84
+    client = ModbusClient(host='192.168.0.77', port=1502) 
 
     if not client.connect():
         print("Connection failed!")
