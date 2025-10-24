@@ -249,7 +249,7 @@ class SnifferThread(QThread):
             except Exception as e:
                 info = f"Error general: {e}"
         
-            # Si no hubo payload Modbus o hubo excepció, mostrar flags TCP
+            # Si no hubo payload Modbus o hubo excepción, mostrar flags TCP
             if not info:
                 flags = pkt[TCP].flags
                 flag_str = []
