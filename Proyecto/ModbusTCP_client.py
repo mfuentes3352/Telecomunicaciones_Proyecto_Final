@@ -21,7 +21,7 @@ from pymodbus.payload import BinaryPayloadDecoder
 
 # Discrete Memoryless Source (unidades: celsius, bar, rpm, Hz, MW)
 def generate_random_values():
-    """Funcion para generar valores aleatorios de un proceso industrial"""
+    """Función para generar valores aleatorios de un proceso industrial"""
     steam_temperature_boiler_output = random.randint(530, 540)
     steam_pressure_boiler_output = random.randint(180, 200)
     angular_velocity_turbine = random.randint(2950, 3050)
