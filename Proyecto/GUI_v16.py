@@ -107,7 +107,7 @@ EXCEPTION_CODES = {
 packet_count = 0    # nro de paquetes capturados
 correct_count = 0    # nro de tramas correctas
 error_count = 0    # nro de tramas erroneas
-last_seq = None   # último número de secuencia asociado a una solicitud
+last_seq = None    # último número de secuencia asociado a una solicitud
 
 # ------------------ Sniffer Thread ------------------
 class SnifferThread(QThread):
