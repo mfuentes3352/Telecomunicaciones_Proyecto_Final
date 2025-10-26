@@ -9,7 +9,7 @@ import pandas as pd
 
 def procesar_csv(nombre_archivo, columna_tiempo, formato_salida='texto'):
     """
-    Procesa un CSV reemplazando ',' por '.' en la columna de tiempo sin modificar la fecha.
+    Procesa un CSV reemplazando ',' por '.' en la columna de tiempo.
     
     Args:
         nombre_archivo (str): Ruta del archivo CSV.
@@ -39,7 +39,6 @@ def procesar_csv(nombre_archivo, columna_tiempo, formato_salida='texto'):
     return df
 
 
-# Uso del programa
 archivo = r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion2.csv"
 columna = 'Time'
 
