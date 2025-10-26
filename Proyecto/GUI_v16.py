@@ -349,7 +349,7 @@ last_rtt_seqack = 0.0
 ERROR_WINDOW = 200        # tamaño de ventana para calcular mediana del error
 VENTANA_RTT = 200         # cantidad de muestras de RTT
 RTT_UMBRAL_BAJO = 3.5     # ms (RTT menor a esto se corrige)
-RTT_UMBRAL_ALTO = 40.0    # ms (para descartar valores fuera de rango)
+RTT_UMBRAL_ALTO = 40.0    # ms 
 JITTER_UMBRAL_ALTO = 7.0  # ms
 
 # Ganancias y límites de corrección
