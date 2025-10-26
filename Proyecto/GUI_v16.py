@@ -465,7 +465,7 @@ def handle_rtt_jitter(pkt):
 
     # Selección del RTT más confiable
     if (rtt1 is not None and rtt2 is not None
-        and (RTT_UMBRAL_BAJO <= rtt1 <= 2.9)
+        and (0.015 <= rtt1 <= RTT_UMBRAL_BAJO)
         and not (rtt2 < 0.015 or rtt2 > RTT_UMBRAL_ALTO)):
         rtt = rtt1
     elif rtt2 is not None and (rtt2 < 0.015 or rtt2 > RTT_UMBRAL_ALTO):
