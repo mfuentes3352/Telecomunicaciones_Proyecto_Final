@@ -38,7 +38,6 @@ def procesar_csv(nombre_archivo, columna_tiempo, formato_salida='texto'):
     
     return df
 
-
 archivo = r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion2.csv"
 columna = 'Time'
 
