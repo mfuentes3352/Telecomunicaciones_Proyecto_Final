@@ -368,8 +368,7 @@ ALPHA_JITTER = 0.3        # suavizado adaptativo moderado
 # ---------- Límites de corrección ----------
 OFFSET_RTT_MIN = 0.01
 OFFSET_RTT_MAX = 0.1
-OFFSET_RTT_CALIB = -0.6   # correccion mas agresiva
-OFFSET_JITTER_MAX = 1.5   # límite de corrección
+OFFSET_JITTER_MAX = 1.5   
 OFFSET_JITTER_MIN = 0.05      
 
 # ---------- Otros ----------
