@@ -354,7 +354,7 @@ RTT_MIN_REAL = 0.941           # mínimo valor de rtt medido con Wireshark
 RTT_MAX_REAL = 3.356           # maximo valor de rango bajo de rtt
 MEDIANA_ERROR_ABS_RTT = 0.577  # sesgo constante
 RTT_UMBRAL_BAJO = 3.5          # ms (RTT menor a esto se corrige)
-RTT_UMBRAL_ALTO = 40.0    # ms
+RTT_UMBRAL_ALTO = 40.0         # ms
 
 # ---------- Parámetros de corrección Jitter ----------
 JITTER_MIN_REAL = 2.8439
