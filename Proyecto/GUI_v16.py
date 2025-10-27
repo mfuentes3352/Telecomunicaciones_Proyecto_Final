@@ -345,24 +345,35 @@ pending_requests = {}
 last_rtt_mbap = 0.0
 last_rtt_seqack = 0.0
 
-# Parametros adaptativos
-ERROR_WINDOW = 200        # tamaño de ventana para calcular mediana del error
+# ---------- Configuración de métricas ----------
 VENTANA_RTT = 200         # cantidad de muestras de RTT
-RTT_UMBRAL_BAJO = 3.5     # ms (RTT menor a esto se corrige)
-RTT_UMBRAL_ALTO = 40.0    # ms 
-JITTER_UMBRAL_ALTO = 7.0  # ms
+ERROR_WINDOW = 200        # tamaño de ventana para calcular mediana del error
 
-# Ganancias y límites de corrección
+# ---------- Parámetros de corrección RTT ----------
+RTT_MIN_REAL = 0.941           # mínimo valor de rtt medido con Wireshark 
+RTT_MAX_REAL = 3.356           # maximo valor de rango bajo de rtt
+MEDIANA_ERROR_ABS_RTT = 0.577  # sesgo constante
+RTT_UMBRAL_BAJO = 3.5          # ms (RTT menor a esto se corrige)
+RTT_UMBRAL_ALTO = 40.0    # ms
+
+# ---------- Parámetros de corrección Jitter ----------
+JITTER_MIN_REAL = 2.8439
+JITTER_MAX_REAL = 7.0721
+MEDIANA_ERROR_ABS = 4.5177767922874    # sesgo constante de jitter
+
+# ---------- Ganancias adaptativas ----------
 ALPHA_RTT = 1.5           # adaptativo leve, para no sobrerreaccionar
+ALPHA_JITTER = 0.3        # suavizado adaptativo moderado
+
+# ---------- Límites de corrección ----------
 OFFSET_RTT_MIN = 0.01
 OFFSET_RTT_MAX = 0.1
 OFFSET_RTT_CALIB = -0.6   # correccion mas agresiva
-
-ALPHA_JITTER = 0.3        # suavizado adaptativo moderado
 OFFSET_JITTER_MAX = 1.5   # límite de corrección
 OFFSET_JITTER_MIN = 0.05      
-SMOOTH_FACTOR = 16.0      # divisor (RFC 3550) 
 
+# ---------- Otros ----------
+SMOOTH_FACTOR = 16.0      # divisor (RFC 3550)  
 DEBUG = True
 
 # --------------------- Funciones auxiliares ---------------------
@@ -500,10 +511,10 @@ def handle_rtt_jitter(pkt):
     # Aplicar corrección solo si RTT bajo
     if rtt < RTT_UMBRAL_BAJO:
         # escalado lineal al rango medido real
-        rtt_corrected = 0.941 + (rtt / RTT_UMBRAL_BAJO) * (3.356 - 0.941)
+        rtt_corrected = RTT_MIN_REAL + (rtt / RTT_UMBRAL_BAJO) * (RTT_MAX_REAL - RTT_MIN_REAL)
         # correccion adaptativa + sesgo constante
-        rtt_corrected += 3 * offset_rtt_adapt + 0.577      
-        rtt_corrected = max(0.941, min(3.356, rtt_corrected))
+        rtt_corrected += 3 * offset_rtt_adapt + MEDIANA_ERROR_ABS_RTT      
+        rtt_corrected = max(RTT_MIN_REAL, min(RTT_MAX_REAL, rtt_corrected))
     else:
         rtt_corrected = rtt 
 
@@ -528,12 +539,6 @@ def handle_rtt_jitter(pkt):
             jitter_errors.pop(0)
 
         med_error = median(jitter_errors)
-
-        # ---------- Parámetros ----------
-        JITTER_MIN_REAL = 2.8439
-        JITTER_MAX_REAL = 7.0721
-        MEDIANA_ERROR_ABS = 4.5177767922874
-        JITTER_UMBRAL_BAJO = 13.0
 
         # ---------- Modelo base RFC 3550 ----------
         base_jitter = current_jitter + (diff - current_jitter) / SMOOTH_FACTOR
