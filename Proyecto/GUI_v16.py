@@ -725,7 +725,7 @@ class AlarmasTab(QWidget):
         super().__init__()
         layout = QVBoxLayout()
 
-        # Tabla de alarmas sin título
+        # Tabla de alarmas
         self.tabla_alarmas = QTableWidget()
         self.tabla_alarmas.setColumnCount(3)
         self.tabla_alarmas.setHorizontalHeaderLabels([

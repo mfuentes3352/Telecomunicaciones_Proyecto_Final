@@ -38,14 +38,14 @@ def procesar_csv(nombre_archivo, columna_tiempo, formato_salida='texto'):
     
     return df
 
-archivo = r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion2.csv"
+archivo = r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion3.csv"
 columna = 'Time'
 
 df_procesado = procesar_csv(archivo, columna, formato_salida='texto')
 
 # Guardar el CSV procesado
 df_procesado.to_csv(
-    r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion2_procesado.csv",
+    r"C:\Users\Martin\Desktop\sniffer\Mediciones\RTT_Wireshark_21_10_25_sesion3_2710_procesado.csv",
     index=False,
     encoding='utf-8'
 )
